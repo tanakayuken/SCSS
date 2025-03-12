@@ -1,0 +1,18 @@
+/*
+foundation
+-----------------------------------------*/
+@use '../foundation/_base';
+
+/*
+layout
+-----------------------------------------*/
+@use '../layout/_layout';
+
+/*
+object
+-----------------------------------------*/
+//component
+@use '../object/component/_section';
+
+//project（トップページのスタイル）
+@use '../object/project/_project_top';

@@ -1,0 +1,18 @@
+/*
+foundation
+-----------------------------------------*/
+@use '../foundation/_base';
+
+/*
+layout
+-----------------------------------------*/
+@use '../layout/_layout';
+
+/*
+object
+-----------------------------------------*/
+//component
+@use '../object/component/_section';
+ 
+//project（プロフィールページ）
+@use '../object/project/_project_profile';
