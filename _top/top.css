@@ -677,6 +677,425 @@ layout
 /*
 object
 -----------------------------------------*/
+/* モーダル */
+.modaal-image .modaal-container {
+  overflow: hidden;
+  background: none;
+  box-shadow: initial;
+}
+@media screen and (min-width: 769px) {
+  .modaal-image .modaal-container {
+    max-width: 750px;
+  }
+}
+.modaal-image .modaal-container .modaal-content {
+  background: #fff;
+}
+@media screen and (max-width: 768px) {
+  .modaal-image .modaal-container .modaal-content .modaal-gallery-item img {
+    width: 100%;
+  }
+}
+.modaal-image .modaal-container .modaal-gallery-prev-inner {
+  left: 0;
+  margin-right: -50px;
+  border-radius: 0 50% 50% 0 !important;
+}
+@media screen and (max-width: 768px) {
+  .modaal-image .modaal-container .modaal-gallery-prev-inner {
+    left: 0;
+    margin-right: 0;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    border: 0.45em solid transparent;
+  }
+  .modaal-image .modaal-container .modaal-gallery-prev-inner::after {
+    border-right: 0.75em solid #000;
+    margin-left: -0.35em;
+  }
+}
+.modaal-image .modaal-container .modaal-gallery-next-inner {
+  right: 0;
+  margin-left: -50px;
+  border-radius: 50% 0 0 50% !important;
+}
+@media screen and (max-width: 768px) {
+  .modaal-image .modaal-container .modaal-gallery-next-inner {
+    right: 0;
+    margin-left: 0;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    border: 0.45em solid transparent;
+  }
+  .modaal-image .modaal-container .modaal-gallery-next-inner::after {
+    border-left: 0.75em solid #000;
+    margin-left: 0.35em;
+  }
+}
+.modaal-image .modaal-gallery-control {
+  border-radius: 0;
+}
+.modaal-image .modaal-gallery-control::after, .modaal-image .modaal-gallery-control::before {
+  border-radius: 0;
+  background: #333;
+}
+.modaal-image .modaal-gallery-control:focus, .modaal-image .modaal-gallery-control:hover {
+  border-radius: 0;
+  background: rgba(255, 255, 255, 0.5);
+}
+@media screen and (max-width: 768px) {
+  .modaal-image .modaal-gallery-control {
+    width: 10vw;
+    height: 10vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .modaal-image .modaal-gallery-control::after {
+    content: "";
+    width: 3.5vw;
+    height: 3.5vw;
+    left: 50%;
+    top: 50%;
+    margin: 0;
+    background: none;
+  }
+  .modaal-image .modaal-gallery-control::before {
+    display: none;
+  }
+  .modaal-image .modaal-gallery-control:focus, .modaal-image .modaal-gallery-control:hover {
+    background: none;
+  }
+}
+.modaal-image .modaal-gallery-next {
+  right: 0 !important;
+}
+.modaal-image .modaal-gallery-prev {
+  left: 0 !important;
+}
+.modaal-image .modaal-inner-wrapper {
+  padding: 0 1.25em;
+}
+@media screen and (min-width: 769px) {
+  .modaal-image .modaal-inner-wrapper {
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+}
+
+/*-- PRICE MENU --*/
+.coming_soon {
+  position: relative;
+  z-index: 0;
+}
+.coming_soon::before, .coming_soon::after {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+.coming_soon::before {
+  content: "Coming soon";
+  font-size: 175%;
+  font-family: "futura-pt", sans-serif;
+  font-weight: 300;
+  font-style: normal;
+  padding-bottom: 1em;
+  z-index: 2;
+}
+.coming_soon::after {
+  content: "2025年4月ご予約受付開始予定";
+  font-size: 85%;
+  font-weight: 300;
+  height: calc(100% - 1em);
+  margin-top: 0.5em;
+  padding-top: 3em;
+  background: rgba(255, 255, 255, 0.92);
+  z-index: 1;
+}
+.coming_soon:first-child {
+  margin-top: -0.25em;
+}
+
+#price ul.priceMenu li {
+  position: relative;
+}
+#price ul.priceMenu li:first-child {
+  margin-top: 0;
+}
+#price ul.priceMenu li h4 {
+  position: relative;
+  font-size: 75%;
+  line-height: 1.35;
+  font-weight: normal;
+  padding: 1.5em 0.5em;
+  border-top: 1px solid #000;
+}
+#price ul.priceMenu li h4::after {
+  content: "＋";
+  position: absolute;
+  top: 48%;
+  right: 0.5em;
+  line-height: 1;
+  font-size: 200%;
+  letter-spacing: 0;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+#price ul.priceMenu li h4 span {
+  display: block;
+  font-size: 225%;
+  line-height: 1;
+  margin-top: 0.25em;
+}
+#price ul.priceMenu li h4.appear::after {
+  content: "－";
+}
+#price ul.priceMenu li h4.appear + .priceDetail {
+  padding-bottom: 2em;
+}
+@media screen and (min-width: 751px) {
+  #price ul.priceMenu li h4 {
+    cursor: pointer;
+  }
+  #price ul.priceMenu li h4:hover {
+    opacity: 0.75;
+  }
+}
+#price ul.priceMenu li .priceDetail {
+  padding: 0.25em 0;
+  border-top: 1px dashed #000;
+}
+#price ul.priceMenu li .priceDetail .detailInn {
+  border-top: 1px dashed #B6B6B6;
+}
+#price ul.priceMenu li .priceDetail .detailInn:first-child {
+  border-top: 0;
+}
+#price ul.priceMenu li .priceDetail .detailInn h5 {
+  color: #7C8D7E;
+  text-align: center;
+  font-weight: bold;
+  padding: 0.25em;
+  margin-top: 1em;
+  background: #DCE7DE;
+}
+#price ul.priceMenu li .priceDetail .detailInn h5.h5_bottom {
+  margin: 1em 0;
+}
+#price ul.priceMenu li .priceDetail .detailInn h5.h5_new {
+  font-size: 95%;
+  font-weight: normal;
+  padding: 0.85em 0;
+}
+#price ul.priceMenu li .priceDetail .detailInn dl {
+  letter-spacing: 0.05em;
+  padding: 1.5em 0 1.5em 1.25em;
+  margin: 0 0 0 0.35em;
+  position: relative;
+  z-index: 0;
+}
+#price ul.priceMenu li .priceDetail .detailInn dl.dashed_bottom {
+  border-bottom: 1px dashed #b6b6b6;
+}
+#price ul.priceMenu li .priceDetail .detailInn dl::after {
+  content: "";
+  position: absolute;
+  top: 0.9em;
+  left: 0;
+  width: 1px;
+  height: calc(100% - 1.8em);
+  border-left: 0.25em solid #7C8D7E;
+}
+#price ul.priceMenu li .priceDetail .detailInn dl dt {
+  font-weight: bold;
+}
+#price ul.priceMenu li .priceDetail .detailInn dl dt.f90 {
+  font-size: 90%;
+}
+#price ul.priceMenu li .priceDetail .detailInn dl dd {
+  font-size: 85%;
+  margin: 0.5em 0 0;
+}
+#price ul.priceMenu li .priceDetail .detailInn dl dd .patients {
+  font-size: 105%;
+  font-weight: bold;
+  line-height: 1.85;
+}
+#price ul.priceMenu li .priceDetail .detailInn dl dd .comments {
+  display: block;
+  font-size: 95%;
+  font-weight: 300;
+  margin-top: 0.55em;
+  letter-spacing: 0.1em;
+}
+#price ul.priceMenu li .priceDetail .detailInn dl .nbsp + dd {
+  margin-top: 0;
+}
+#price ul.priceMenu li .priceDetail .detailInn dl p {
+  display: flex;
+  align-items: center;
+  font-size: 125%;
+  font-weight: normal;
+  margin-top: 0.5em;
+  position: relative;
+  z-index: 0;
+}
+#price ul.priceMenu li .priceDetail .detailInn dl p:first-child {
+  margin-top: 0.75em;
+}
+#price ul.priceMenu li .priceDetail .detailInn dl p span {
+  display: inline-block;
+  min-width: 8.25em;
+  color: #5D5D5D;
+  font-size: 75%;
+  text-align: center;
+  padding: 0.65em 1em;
+  margin-right: 1.75em;
+  background: #E0E0E0;
+  border-radius: 5em;
+}
+#price ul.priceMenu li .priceDetail .detailInn dl p span.yinai {
+  min-width: auto;
+  margin: 0;
+  padding: 0.5em 1.25em;
+  background-color: #dce7de;
+  border-radius: 0.5em;
+  position: absolute;
+  top: 50%;
+  right: -0.75em;
+  z-index: 1;
+  transform: translateY(-50%);
+}
+@media screen and (min-width: 751px) {
+  #price ul.priceMenu li .priceDetail .detailInn dl p span.yinai {
+    right: -1em;
+    min-width: 8.25em;
+    padding: 0.65em 1em;
+  }
+}
+#price ul.priceMenu li .priceDetail .detailInn dl p strong {
+  font-size: 175%;
+  line-height: 1.25;
+}
+#price ul.priceMenu li .priceDetail .detailInn dl p.emb05 {
+  margin-bottom: 0.75em;
+}
+#price ul.priceMenu li .priceDetail .detailInn dl p.no_d strong {
+  font-size: 135%;
+  letter-spacing: 0.15em;
+}
+#price ul.priceMenu li .priceDetail .detailInn dl p.notes {
+  color: #7C8D7E;
+  font-size: 95%;
+  text-align: left;
+  font-weight: normal;
+  padding: 0.75em 1em;
+  margin-top: 1em;
+  background: #DCE7DE;
+}
+#price ul.priceMenu li .priceDetail .detailInn dl p.notes_new {
+  display: block;
+  font-size: 100%;
+  text-align: center;
+  letter-spacing: 0.125em;
+}
+#price ul.priceMenu li .priceDetail .detailInn dl p.notes_new span {
+  display: block;
+  color: #586D5B;
+  font-size: 110%;
+  font-weight: 500;
+  line-height: 1;
+  margin: 0.15em 0 0;
+  padding: 0;
+  background: none;
+}
+#price ul.priceMenu li .priceDetail .detailInn dl p.notes_new span strong {
+  line-height: 1;
+  position: relative;
+  top: 1px;
+}
+#price ul.priceMenu li .priceDetail .detailInn dl.flexCenter {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.85em 0.75em;
+}
+#price ul.priceMenu li .priceDetail .detailInn dl.flexCenter::after {
+  content: none;
+  display: none;
+}
+#price ul.priceMenu li .priceDetail .detailInn dl.flexCenter dd {
+  font-size: 70%;
+  margin-top: 0;
+}
+#price ul.priceMenu li .priceDetail .detailInn dl.flexCenter dd p {
+  margin-top: 0;
+}
+#price ul.priceMenu li .priceDetail .detailInn.borBott {
+  margin-bottom: 1em;
+  border-bottom: 1px dashed #b6b6b6;
+}
+#price .cancel_policy {
+  border-top: 1px solid #000;
+  padding-top: 1.25em;
+}
+#price .cancel_policy h3 {
+  color: #fff;
+  font-size: 115% !important;
+  font-weight: normal !important;
+  text-align: center !important;
+  line-height: 1 !important;
+  margin: 0 0 0.5em !important;
+  padding: 0.5em;
+  background: #586F5A;
+}
+#price .cancel_policy h4 {
+  color: #7c8d7e;
+  text-align: center;
+  font-weight: 500;
+  padding: 0.25em;
+  background: #dce7de;
+}
+.profile_ishii #price .cancel_policy h4 {
+  margin-top: 0.5em;
+}
+#price .cancel_policy ul li {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px dashed #B6B6B6;
+  padding: 0.5em;
+}
+#price .cancel_policy ul li span.din2014 {
+  font-size: 150%;
+}
+#price .cancel_policy ul + h4 {
+  margin-top: 1.75em;
+}
+.profile_ishii #price .cancel_policy ul + h4 {
+  margin-top: 1.75em;
+}
+#price .discount_bnr {
+  display: block !important;
+  margin: 2em -0.235em 0.25em;
+}
+@media screen and (min-width: 751px) {
+  #price .discount_bnr {
+    max-width: 670px;
+  }
+}
+
 section#clinic {
   z-index: 2;
 }
